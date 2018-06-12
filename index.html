@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+	<head>
+	<!-- 放置css meta title-->
+		<meta charset="utf-8" />
+		<title>Task recoed</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<meta http-equiv="Cache-control" content="public" />
+		<meta name="author" content="Billy Ji" />
+		<meta name="copyright" content="Billy Ji" />
+		<meta name="keywords" content="" />
+		<meta name="description"  content="" />
+		<meta name="distribution" content="Taiwan" />
+		<meta name="robots" content="all" />
+
+		<!-- 瀏覽器支援度 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<!-- 瀏覽器支援度 END -->
+
+		<meta content="INDEX, FOLLOW" name='ROBOTS' />
+		<meta content="3 DAYS" name='REVISIT-AFTER' />
+
+		<!-- share -->
+		<meta property="og:title" content=""/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:site_name" content="" />
+		<meta property="og:description" content="" />
+		<!--  share END -->
+
+
+	<!--css-->
+		<!--reset-->
+		<link href="css/reset.css" rel="stylesheet" type="text/css">
+
+		<!-- bootstrap 3.3.7 -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- ui -->
+		<link rel="stylesheet" href="css/jquery-ui.min.css">
+
+		<!-- Owl Carousel -->
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+		<!-- Animate -->
+		<link href="css/animate.css" rel="stylesheet">
+
+		<!-- 字型icon 舊-->
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- lightbox -->
+		<link href="css/lity.min.css" rel="stylesheet">
+
+		<!-- Roboto 字型 -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+		<!-- all -->
+		<link href="css/all.css" rel="stylesheet" type="text/css">
+
+	</head>
+
+	<!-- ontouchstart iphone hover支援 -->
+	<body ontouchstart>
+
+		<!--header-->
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo">
+						<a href="index.html">
+							<img src="images/logo.png" alt="">
+						</a>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<form action="#" class="search">
+							<button>
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
+							<input type="text" class="search-text" id="search-text" placeholder="Explore your own activities">
+						</form>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<div class="main">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 sidebar">
+						<ul class="sidebar-filter">
+							<li id="">
+								<h3>Location</h3>
+								<select name="" class="location" id="location">
+									<option value="Taipei">Taipei</option>
+									<option value="test">test</option>
+								</select>
+							</li>
+							<li id="">
+								<h3>Date</h3>
+								<div class="date">
+									<label for="from-date">from</label>
+									<input type="date" id="from-date" placeholder="2014-09-18">
+								</div>
+								<div class="date">
+									<label for="to-date">to</label>
+									<input type="date" id="to-date" placeholder="2014-09-18">
+								</div>
+							</li>
+							<li id="">
+								<h3>Categories</h3>
+								<div class="categories">
+									<input type="checkbox" id="check-all">
+									<label for="check-all">All</label>
+								</div>
+								<div class="categories">
+									<input type="checkbox" id="check-fun">
+									<label for="check-fun">Entertainment</label>
+								</div>
+								<div class="categories">
+									<input type="checkbox" id="check-food">
+									<label for="check-food">Food</label>
+								</div>
+								<div class="categories">
+									<input type="checkbox" id="check-learn">
+									<label for="check-learn">Learning</label>
+								</div>
+								<div class="categories">
+									<input type="checkbox" id="check-outdoor">
+									<label for="check-outdoor">Outdoors</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content">
+						<h2>Showing <span>15</span> results by…</h2>	
+						<ul class="content-filter">
+							<li>Koahsiung <span class="cf-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></li>
+							<li>Koahsiung <span class="cf-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></li>
+						</ul>
+						<ul class="content-list">
+							<li class="row">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
+									<h2>Kogi Cosby sweater.</h2>
+									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
+									<!-- 主辦單位/分類標籤 -->
+									<div style="margin-bottom: 16px;">
+										<span class="list-organizer">
+											Ethan Foster
+										</span>
+										<span class="list-categories">
+											Entertainment
+										</span>
+									</div>
+									<!-- 地點/時間 -->
+									<div>
+										<span class="list-location">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											Kaohsiung City
+										</span>
+										<span class="list-time">
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+											2018/5/24 - 2018/5/31
+										</span>
+									</div>
+								</div>
+								<a href="detail.html" class="link"></a>
+							</li>
+							<li class="row">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
+									<h2>Kogi Cosby sweater.</h2>
+									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
+									<!-- 主辦單位/分類標籤 -->
+									<div style="margin-bottom: 16px;">
+										<span class="list-organizer">
+											Ethan Foster
+										</span>
+										<span class="list-categories">
+											Entertainment
+										</span>
+									</div>
+									<!-- 地點/時間 -->
+									<div>
+										<span class="list-location">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											Kaohsiung City
+										</span>
+										<span class="list-time">
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+											2018/5/24 - 2018/5/31
+										</span>
+									</div>
+								</div>
+								<a href="detail.html" class="link"></a>
+							</li>
+							<li class="row">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
+								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
+									<h2>Kogi Cosby sweater.</h2>
+									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
+
+									<!-- 主辦單位/分類標籤 -->
+									<div style="margin-bottom: 16px;">
+										<span class="list-organizer">
+											Ethan Foster
+										</span>
+										<span class="list-categories">
+											Entertainment
+										</span>
+									</div>
+									<!-- 地點/時間 -->
+									<div>
+										<span class="list-location">
+											<i class="fa fa-map-marker" aria-hidden="true"></i>
+											Kaohsiung City
+										</span>
+										<span class="list-time">
+											<i class="fa fa-calendar" aria-hidden="true"></i>
+											2018/5/24 - 2018/5/31
+										</span>
+									</div>
+								</div>
+								<a href="detail.html" class="link"></a>
+							</li>
+						</ul>
+						<div class='page_no'>
+							<button class='page_prev'><a href='#'><p> « </p></a></button>
+							<div class='page_ul'>
+								<button id='page_1' class='page active'><a href='#'>1</a></button>
+								<button id='page_2' class='page'><a href='#'>2</a></button>
+								<button id='page_3' class='page'><a href='#'>3</a></button>
+								<button id='page_4' class='page'><a href='#'>4</a></button>
+								<button id='page_5' class='page'><a href='#'>5</a></button>
+							</div>
+							<button class='page_next'><a href='#'><p> » </p></a></button>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!--JavaScript-->
+
+			<!-- plugins -->
+
+			<script type="text/javascript" src="js/jquery_2.2.4_min.js"></script>
+
+			<!--ui-->
+			<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+			<!-- bootstrap -->
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+			<!-- Owl Carousel -->
+			<script src="js/owl.carousel.min.js"></script>
+
+			<!-- wow -->
+			<script src="js/wow.min.js" type="text/javascript"></script>
+
+			<!-- lightbox -->
+			<script src="js/lity.min.js" type="text/javascript"></script>
+
+			<!-- PIE.htc 讓css3某些屬性能for IE -->
+			<!-- <script src="js/PIE.htc" type="text/javascript"></script> -->
+
+			<!-- // plugins -->
+
+
+			<!-- customized -->
+
+			<script src="js/all.js" type="text/javascript"></script>
+
+			<!-- // customized -->
+
+		<!-- // JavaScript-->
+
+
+	</body>
+</html>

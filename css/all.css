@@ -1,0 +1,484 @@
+@charset "utf-8";
+  
+/* 和瀏覽器支援有關，可讓比較舊的瀏覽器支援HTML5 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+@font-face{}
+
+/* fontawesome */
+
+/* fontawesome END */
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+
+  /* 文字 END */
+
+  /* media */
+    /* 1200以上 */
+    @media (min-width: 1201px) {
+
+    }
+
+    /* 736~1200 */
+    @media screen and (min-width: 736px) and (max-width: 1200px) {
+      .html iframe{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      .html img{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      /* 把套件產生的藍線蓋過css */
+      a:focus{
+        outline: 0 !important;
+        outline: 0 !important;
+        outline-offset: 0 !important;
+      }
+      
+    }
+
+    /* 735以內 */
+    @media (max-width: 735px) {
+      .html iframe{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+      .html img{
+        width: 100% !important;
+        height: auto !important;
+      }
+      
+    }
+
+  /* media END */
+
+
+ 
+
+/* 共用------------------------------- */
+
+.clear-fix{
+  clear: both;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+body{
+  background: #F2F2F2;
+}
+
+body,h1,h2,.title,.sub-title,.status{
+  font-family: 'Roboto', sans-serif;
+}
+
+.main{
+  width: 100%;
+  min-height: 800px;
+  /* padding: 24px 0 150px; */
+}
+
+  /* font */
+  h1{
+    font-size: 36px;
+  }
+
+  h2{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #000000;
+  }
+
+  h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+  }
+
+
+  /* font END */
+
+
+  .purple{
+    color: #9013FE;
+  }
+
+
+
+  
+
+
+
+/* 共用 END ------------------------------- */
+
+
+/* header------------------------------- */
+
+header{
+  width: 100%;
+  height: 71px;
+  background-color: #7828B4;
+}
+
+.logo img{
+  margin-top: 21px;
+  margin-left: 25px;
+}
+
+form.search{
+  width: 350px;
+  margin-top: 22px;
+  margin-left: 13px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.search button{
+  background: none;
+  border: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.search input{
+  width: 300px;
+  background: none;
+  border: 0;
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(255,255,255,0.50);
+}
+
+.search input:focus{
+  background: none;
+  outline: 0;
+}
+
+.search input::-webkit-input-placeholder {
+  color: rgba(255,255,255,0.50);
+}
+
+.search input:-moz-placeholder { 
+  color: rgba(255,255,255,0.50);
+}
+
+.search input::-moz-placeholder {
+  color: rgba(255,255,255,0.50);
+}
+.search input:-ms-input-placeholder {
+  color: rgba(255,255,255,0.50); 
+}
+
+
+/* header END ------------------------------- */
+
+
+/* index------------------------------- */
+
+  /* sidebar */
+    .sidebar{
+      background-color: #EBEBEB;
+      padding: 0px 40px 20px;
+    }
+
+    .sidebar-filter li{
+      margin-bottom: 25px;
+    }
+
+    .location{
+      width: 100%;
+      padding: 7px 5px;
+      background: #FFFFFF;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    .date label{
+      width: 18%;
+    }
+
+    .date input{
+      width: 80%;
+      padding: 5px;
+      margin-bottom: 8px;
+    }
+
+    .categories{
+      font-size: 16px;
+      color: #000000;
+    }
+
+    .categories input{
+      margin-right: 5px;
+    }
+
+    .categories label{
+      font-weight: normal;
+      cursor: pointer;
+
+    }
+ 
+  /* content */
+
+    .content{
+      padding: 24px 42px;
+    }
+
+    .content h2{
+      line-height: 36px;
+      margin-bottom: 8px;
+    }
+
+    .content .content-list h2{
+      color: #9013FE;
+      line-height: 36px;
+      margin-bottom: 8px;
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .content h2 span{
+      font-weight: bold;
+      color: #7828B4;
+    }
+
+    .content p{
+      font-size: 16px;
+      line-height: 24px;
+      height: 50px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .content-filter{
+      margin-bottom: 24px;
+    }
+
+    .content-filter li{
+      display: inline-block;
+      vertical-align: middle;
+      
+      padding: 5px 16px;
+      margin-right: 3px;
+      font-size: 14px;
+      font-style:italic;
+      color: #9013FE;
+      border: solid 1px #9013FE;
+      border-radius: 99em;
+
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s; 
+      -moz-transition: all 0.3s; 
+      -o-transition: all 0.3s;
+    }
+
+    .content-filter li span{
+      margin-left: 5px;
+      margin-top: 2px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .content-filter li:hover{
+      background-color: #9013FE;
+      color: #fff;
+    }
+    
+    .content-list li{
+      margin-bottom: 24px;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+      position: relative;
+
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s; 
+      -moz-transition: all 0.3s; 
+      -o-transition: all 0.3s;
+    }
+
+    .content-list li:hover{
+      box-shadow: 0px 0px 14px rgba(0,0,0,0.5);
+    }
+
+    .content-list .list-img{
+      /* width: 220px; */
+      height: 220px;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .content-list .list-text{
+      background-color: #FFFFFF;
+      padding: 24px 20px;
+      height: 220px;
+    }
+
+    .list-organizer{
+      margin-right: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .list-categories{
+      font-size: 16px;
+      color: #FFFFFF;
+      background-color: #D7D7D7;
+      border-radius: 99em;
+      padding: 4px 14px;
+      font-style: italic;
+    }
+
+    .list-location i.fa,.list-time i.fa{
+      color: #000;
+      margin-right: 3px;
+    }
+
+    .list-location,.list-time{
+      font-size: 15px;
+      color: #9B9B9B;
+    }
+
+    .list-location{
+      margin-right: 20px;
+    }
+    .link{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100%;
+    }
+
+    .page_no{
+      width: 100%;
+      text-align: right;
+      font-size: 16px;
+      color: #9013FE;
+    }
+
+    .page_no button{
+      background: #FFFFFF;
+      border: 1px solid #ECEEEF;
+    }
+
+    .page_prev,.page_ul,.page_next{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .page_no .page_prev p,.page_no .page_next p{
+      height: auto;
+      overflow: visible;
+      margin-bottom: 0px;
+      line-height: 22px;
+    }
+
+    .page,.page_prev,.page_next{
+      padding: 7px 13px;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+    }
+
+    .page:hover,.page.active{
+      background-color: #9013FE;
+      border: 1px solid #9013FE;
+      color: #fff;
+    }
+
+
+
+
+/* index END ------------------------------- */
+
+
+/* detail.html ------------------------------- */
+
+.detail-con .list-img{
+  height: 350px;
+}
+
+.detail-con .list-text{
+  height: auto;
+  padding: 24px 66px;
+}
+
+.detail-con .content-list h2{
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 42px;
+  margin-bottom: 15px;
+  overflow: visible;
+}
+
+.detail-con .list-text p{
+  height: auto;
+}
+
+.detail-filter{
+  margin-bottom: 24px;
+  background: #EBEBEB;
+  border-radius: 4px;
+  padding: 14px;
+}
+
+.detail-filter li{
+  margin-bottom: 0;
+  box-shadow: inherit;
+  display: inline-block;
+  vertical-align: middle;
+  color: #9B9B9B;
+}
+
+.detail-filter li:hover{
+  box-shadow: inherit;
+}
+
+/* .detail-filter li. */
+
+.detail-filter li.purple{
+  color: #9013FE;
+}
+
+/* detail.html END ------------------------------- */
