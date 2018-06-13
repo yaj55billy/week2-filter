@@ -368,12 +368,12 @@ form.search{
       font-style: italic;
     }
 
-    .list-location i.fa,.list-time i.fa{
+    .list-location i.fa,.list-phone i.fa{
       color: #000;
       margin-right: 3px;
     }
 
-    .list-location,.list-time{
+    .list-location,.list-phone{
       font-size: 15px;
       color: #9B9B9B;
     }
