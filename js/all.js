@@ -1,5 +1,19 @@
 
+// $('.sidebar-filter li h3 .fa.fa-plus').each(function(){
+//     $(this).click(function(){
+//         $(this).parents('').siblings('.location').slideDown(500);
+//         $(this).css('display','none');
+//         $(this).siblings('.fa-minus').css('display','block');
+//     });
+// });
 
+// $('.sidebar-filter li h3 .fa.fa-minus').each(function(){
+//     $(this).click(function(){
+//         $(this).parents('').siblings('.location').slideUp(500);
+//         $(this).css('display','none');
+//         $(this).siblings('.fa-plus').css('display','block');
+//     });
+// });
 
 
 var xhr = new XMLHttpRequest();
@@ -52,7 +66,7 @@ xhr.onload = function(){
                 filterData.push(data.result.records[i]);   
             }
         }
-        updateContent(filterData);
+        pageProcess(filterData);
     }
 
     //將地區選擇存取，如果發生change事件則執行areaFilter
@@ -74,29 +88,206 @@ xhr.onload = function(){
                 filterData.push(data.result.records[i]);   
             }
         }
-        updateContent(filterData);
+        pageProcess(filterData);
+    }
+
+    var checkAll = document.getElementById('check-all');
+    checkAll.addEventListener('click',checkCate);
+
+    var checkFree = document.getElementById('check-free');
+    checkFree.addEventListener('click',checkCate);
+
+    function checkCate(){
+
+        var filterData =[];
+        $('#check-all').toggleClass('active');
+        $('#check-free').toggleClass('active');
+        
+        if($('#check-all').hasClass('active')){
+            for (var i = 0; i< dataLen; i++) {
+                filterData.push(data.result.records[i]);
+            }
+            pageProcess(filterData);
+        } else{
+            // 回到初始狀態
+            content.innerHTML = '';
+            page.innerHTML = '';
+            pageProcess(filterData);
+        }
+
+        if($('#check-free').hasClass('active')){
+            for (var i = 0; i< dataLen; i++) {
+                var dataArea = data.result.records[i].Ticketinfo;
+
+                if(dataArea == '免費參觀'){
+                    filterData.push(data.result.records[i]);   
+                }
+            }
+            pageProcess(filterData);
+        } else{
+            // 回到初始狀態
+            content.innerHTML = '';
+            page.innerHTML = '';
+            pageProcess(filterData);
+        }
+
     }
 }
+
+
+
+
+
+
+// --------------------------------------- 頁碼的處理
+var page = document.querySelector(".page_no");
+
+var pageNum = 6;
+var nowPage = 1;
+
+function pageProcess(array){
+
+    var result = [];
+    var btnStr = "";
+    
+    for(var i=0 ; i<array.length ; i+=pageNum){
+        // array.slice(i,i+pageNum),做一新陣列，範圍從 i到 i+pageNum
+        result.push(array.slice(i,i+pageNum));  
+        btnStr += '<button class="page"><a href="#">'+ result.length +'</a></button>';
+    }
+    page.innerHTML = '<button class="page_prev"><a href="#"><p> < </p></a></button>'+'<div class="page_ul">'+ btnStr +'</div>' + '<button class="page_next"><a href="#"><p> > </p></a></button>';
+
+    // --------------- page.innerHTML 為組頁碼
+
+
+    var resultLen = result.length;
+    
+    if (array.length > pageNum){
+        page.style.display = "block";
+    }else{
+        page.style.display = "none";
+    }
+    // --------------------------  判斷顯示頁數
+
+
+    var startInfo = (nowPage-1) * pageNum + 1; 
+    //開始顯示的資料
+    var endInfo = nowPage * pageNum; 
+    //最後顯示的資料
+
+    pageJudgment(startInfo,endInfo,array,resultLen);
+  }
+
+  // --------------------------------------- 頁碼的處理 END  往下為判斷點擊的是數字頁碼、Next Prev
+
+
+
+  function pageJudgment(startInfo,endInfo,array,resultLen){
+
+    numJudgment(1); //一點擊後，判定為第一頁
+
+    var pageChild = document.querySelectorAll(".page_no .page"); 
+    var prevBtn = document.querySelector('.page_prev');
+    var nextBtn = document.querySelector('.page_next');
+    var num = 1; //num初始
+    
+    for(i= 0 ;i<pageChild.length;i++){
+        pageChild[i].addEventListener('click',function(e){
+            e.preventDefault();
+            num = e.target.textContent;
+            startInfo = (num-1) * pageNum + 1;
+            endInfo = num * pageNum;
+            numJudgment(num);
+            updateContent(startInfo,endInfo,array);
+        });
+    }
+
+    
+    prevBtn.addEventListener('click',function(e){
+        num = Number(num) -1;
+        startInfo = (num-1) * pageNum + 1;
+        endInfo = num * pageNum;
+        numJudgment(num);
+        
+    });
+
+    nextBtn.addEventListener('click',function(){
+        num = Number(num) +1;
+        startInfo = (num-1) * pageNum + 1;
+        endInfo = num * pageNum;
+        console.log(num);
+        numJudgment(num);
+    });
+
+    function numJudgment(num){
+
+        var prevBtn = document.querySelector('.page_prev');
+        var nextBtn = document.querySelector('.page_next');
+        var pageChild = document.querySelectorAll(".page_no .page"); 
+
+        // 偵測最後一頁
+        if(num == resultLen){
+            nextBtn.style.display= 'none';
+            prevBtn.style.display= 'inline-block';
+            addActive(num);
+            updateContent(startInfo,endInfo,array);
+        }
+
+        // 偵測第一頁
+        if (num == 1){
+            //初始渲染
+            prevBtn.style.display= 'none';
+            nextBtn.style.display= 'inline-block';
+            addActive(num);
+            updateContent(startInfo,endInfo,array);
+        } 
+
+        if(num>1 && num<resultLen){
+            prevBtn.style.display= 'inline-block';
+            nextBtn.style.display= 'inline-block';
+            addActive(num);
+            updateContent(startInfo,endInfo,array);
+        }
+
+        function addActive(num){
+            for(i= 0 ;i<pageChild.length;i++){
+                if(num == pageChild[i].textContent){
+                    pageChild[i].setAttribute('class','page active');
+                } else{
+                    pageChild[i].setAttribute('class','page');
+                }
+            }
+        }
+    }
+
+  }
+
 
 
 var content = document.querySelector('.content-list');
 
 // 組字串
 
-function updateContent(filterData){
+function updateContent(startInfo,endInfo,array){
     var str = '';
+
     var dataTotal = document.querySelector('.dataTotal');
-    dataTotal.textContent = filterData.length;
-    // console.log(filterData);
-    // console.log(filterData.length);
-    // Description
-    for (var i = 0; i< filterData.length; i++) {
+    dataTotal.textContent = array.length;
+
+    // 如果資料未滿4筆時，則將endInfo帶入陣列長度，例如array只有2筆資料
+    // ，但如果endInfo為4時，則for迴圈跑的第2、第3筆將會出錯
+    if(array.length < endInfo){
+        endInfo = array.length;
+    }
+
+
+    for (var i =startInfo-1; i< endInfo; i++) {
         str = str +  `
         <li class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(${filterData[i].Picture1})"></div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
-                <h2>${filterData[i].Name}</h2>
-                <p>${filterData[i].Description}</p>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 list-img" style="background-image: url(${array[i].Picture1})"></div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 list-text">
+                <h2>${array[i].Name}</h2>
+                <p>${array[i].Description}</p>
                 <div style="margin-bottom: 16px;">
                     <span class="list-organizer">
                         Ethan Foster
@@ -112,7 +303,7 @@ function updateContent(filterData){
                     </span>
                     <span class="list-phone">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        ${filterData[i].Tel}
+                        ${array[i].Tel}
                     </span>
                 </div>
             </div>
@@ -120,6 +311,8 @@ function updateContent(filterData){
         </li>`
     }
     content.innerHTML = str;
+
+    $('html,body').animate({scrollTop:$('.content-list').offset().top},1000);
 
 }
 

@@ -96,9 +96,11 @@
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 sidebar">
 						<ul class="sidebar-filter">
 							<li id="">
-								<h3>Location</h3>
+								<h3>
+									Location
+								</h3>
 								<select name="" class="location" id="location">
-									<option value="" disabled selected>選擇高雄區域</option>
+									<option value="" disabled selected>--選擇行政區--</option>
 									<option value="三民區">三民區</option>
 									<option value="內門區">內門區</option>
 									<option value="美濃區">美濃區</option>
@@ -126,55 +128,50 @@
 									<option value="鳳山區">鳳山區</option>
 								</select>
 							</li>
+							<!-- <li id="">
+								<h3>
+									Date
+								</h3>
+								<div class="date-box">
+									<div class="date">
+										<label for="from-date">from</label>
+										<input type="date" id="from-date" placeholder="2014-09-18">
+									</div>
+									<div class="date">
+										<label for="to-date">to</label>
+										<input type="date" id="to-date" placeholder="2014-09-18">
+									</div>
+								</div>
+							</li> -->
 							<li id="">
-								<h3>Date</h3>
-								<div class="date">
-									<label for="from-date">from</label>
-									<input type="date" id="from-date" placeholder="2014-09-18">
-								</div>
-								<div class="date">
-									<label for="to-date">to</label>
-									<input type="date" id="to-date" placeholder="2014-09-18">
-								</div>
-							</li>
-							<li id="">
-								<h3>Categories</h3>
-								<div class="categories">
-									<input type="checkbox" id="check-all">
-									<label for="check-all">All</label>
-								</div>
-								<div class="categories">
-									<input type="checkbox" id="check-fun">
-									<label for="check-fun">Entertainment</label>
-								</div>
-								<div class="categories">
-									<input type="checkbox" id="check-food">
-									<label for="check-food">Food</label>
-								</div>
-								<div class="categories">
-									<input type="checkbox" id="check-learn">
-									<label for="check-learn">Learning</label>
-								</div>
-								<div class="categories">
-									<input type="checkbox" id="check-outdoor">
-									<label for="check-outdoor">Outdoors</label>
+								<h3>
+									Categories
+								</h3>
+								<div class="categories-box">	
+									<div class="categories">
+										<input type="checkbox" id="check-all">
+										<label for="check-all">All</label>
+									</div>
+									<div class="categories">
+										<input type="checkbox" id="check-free">
+										<label for="check-free">免費參觀</label>
+									</div>
 								</div>
 							</li>
 						</ul>
 					</div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 content">
-						<h2>Showing <span class="dataTotal">15</span> results by…</h2>	
+						<h2>Showing <span class="dataTotal"></span> results by…</h2>	
 						<ul class="content-filter">
 							<li>Koahsiung <span class="cf-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></li>
 							<li>Koahsiung <span class="cf-close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span></li>
 						</ul>
 						<ul class="content-list">
-							<li class="row">
+							<!-- <li class="row">
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
 								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
 									<h2>Kogi Cosby sweater.</h2>
 									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
-									<!-- 主辦單位/分類標籤 -->
 									<div style="margin-bottom: 16px;">
 										<span class="list-organizer">
 											Ethan Foster
@@ -183,7 +180,6 @@
 											Entertainment
 										</span>
 									</div>
-									<!-- 地點/時間 -->
 									<div>
 										<span class="list-location">
 											<i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -196,73 +192,17 @@
 									</div>
 								</div>
 								<a href="detail.html" class="link"></a>
-							</li>
-							<li class="row">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
-								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
-									<h2>Kogi Cosby sweater.</h2>
-									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
-									<!-- 主辦單位/分類標籤 -->
-									<div style="margin-bottom: 16px;">
-										<span class="list-organizer">
-											Ethan Foster
-										</span>
-										<span class="list-categories">
-											Entertainment
-										</span>
-									</div>
-									<!-- 地點/時間 -->
-									<div>
-										<span class="list-location">
-											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											Kaohsiung City
-										</span>
-										<span class="list-phone">
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											000
-										</span>
-									</div>
-								</div>
-								<a href="detail.html" class="link"></a>
-							</li>
-							<li class="row">
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 list-img" style="background-image: url(images/content.png)"></div>
-								<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 list-text">
-									<h2>Kogi Cosby sweater.</h2>
-									<p>Donec euismod scelerisque ligula. Maecenas eu varius risus, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue. Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.</p>
+							</li> -->
 
-									<!-- 主辦單位/分類標籤 -->
-									<div style="margin-bottom: 16px;">
-										<span class="list-organizer">
-											Ethan Foster
-										</span>
-										<span class="list-categories">
-											Entertainment
-										</span>
-									</div>
-									<!-- 地點/時間 -->
-									<div>
-										<span class="list-location">
-											<i class="fa fa-map-marker" aria-hidden="true"></i>
-											Kaohsiung City
-										</span>
-										<span class="list-phone">
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											000
-										</span>
-									</div>
-								</div>
-								<a href="detail.html" class="link"></a>
-							</li>
 						</ul>
 						<div class='page_no'>
 							<button class='page_prev'><a href='#'><p> « </p></a></button>
 							<div class='page_ul'>
-								<button id='page_1' class='page active'><a href='#'>1</a></button>
+								<!-- <button id='page_1' class='page active'><a href='#'>1</a></button>
 								<button id='page_2' class='page'><a href='#'>2</a></button>
 								<button id='page_3' class='page'><a href='#'>3</a></button>
 								<button id='page_4' class='page'><a href='#'>4</a></button>
-								<button id='page_5' class='page'><a href='#'>5</a></button>
+								<button id='page_5' class='page'><a href='#'>5</a></button> -->
 							</div>
 							<button class='page_next'><a href='#'><p> » </p></a></button>
 						</div>

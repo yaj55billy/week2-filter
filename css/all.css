@@ -41,50 +41,7 @@ textarea {
 
 
 
-  /* 文字 END */
 
-  /* media */
-    /* 1200以上 */
-    @media (min-width: 1201px) {
-
-    }
-
-    /* 736~1200 */
-    @media screen and (min-width: 736px) and (max-width: 1200px) {
-      .html iframe{
-        width: 100% !important;
-        height: auto !important;
-      }
-      
-      .html img{
-        width: 100% !important;
-        height: auto !important;
-      }
-      
-      /* 把套件產生的藍線蓋過css */
-      a:focus{
-        outline: 0 !important;
-        outline: 0 !important;
-        outline-offset: 0 !important;
-      }
-      
-    }
-
-    /* 735以內 */
-    @media (max-width: 735px) {
-      .html iframe{
-        width: 100% !important;
-        height: auto !important;
-      }
-      
-      .html img{
-        width: 100% !important;
-        height: auto !important;
-      }
-      
-    }
-
-  /* media END */
 
 
  
@@ -111,7 +68,7 @@ body,h1,h2,.title,.sub-title,.status{
 
 .main{
   width: 100%;
-  min-height: 800px;
+  /* min-height: 800px; */
   /* padding: 24px 0 150px; */
 }
 
@@ -220,7 +177,12 @@ form.search{
     }
 
     .sidebar-filter li{
-      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: solid 1px #D7D7D7;
+    }
+
+    .sidebar-filter li h3{
+      position: relative;
     }
 
     .location{
@@ -482,3 +444,97 @@ form.search{
 }
 
 /* detail.html END ------------------------------- */
+
+
+  /* phone */
+    @media screen and (min-width: 0px) and (max-width: 767px) {
+      
+      a:focus{
+        outline: 0 !important;
+        outline: 0 !important;
+        outline-offset: 0 !important;
+      }
+
+      .logo{
+        text-align: center;
+      }
+
+      .logo img{
+        margin-left: 0px;
+      }
+
+      form.search{
+        width: 100%;
+        padding-top: 12px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        border-bottom: solid 1px #000;
+      }
+
+      .search button{
+        color: #000;
+      }
+
+      .search input{
+        color: #9B9B9B;
+      }
+
+      .search input::-webkit-input-placeholder {
+        color: #9B9B9B;
+      }
+      
+      .search input:-moz-placeholder { 
+        color: #9B9B9B;
+      }
+      
+      .search input::-moz-placeholder {
+        color: #9B9B9B;
+      }
+      .search input:-ms-input-placeholder {
+        color: #9B9B9B;
+      }
+
+      .sidebar-filter li{
+        padding-bottom: 12px;
+      }
+
+      .content{
+        padding: 24px 10px;
+      }
+
+      .content-list li.row{
+        margin: 0 20px 24px;
+      }
+
+      .content-list .list-text{
+        height: auto;
+      }
+
+      .list-location, .list-phone{
+        display: block;
+      }
+
+      .list-location{
+        margin-bottom: 5px;
+      }
+
+      .page_no{
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .page_prev,.page_next{
+        width: 10%;
+      }
+      .page_ul{
+        width: 75%;
+      }
+
+      .page_prev, .page_ul, .page_next{
+        vertical-align: top;
+      }
+
+    }
+
+  /* phone END */
